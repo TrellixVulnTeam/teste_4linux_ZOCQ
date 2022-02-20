@@ -1,27 +1,13 @@
 # Teste4linux
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
-
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para rodar digite no terminal `ng serve` . Navegue até `http://localhost:4200/`.
 
-## Code scaffolding
+## Para rodar o back-end
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para rodar o back-end em laravel, navegue até a pasta api, abra o terminal e digite:`php artisan serve --port=8080`
 
-## Build
+## Documentação da API:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+https://documenter.getpostman.com/view/19682883/UVkjwy4z

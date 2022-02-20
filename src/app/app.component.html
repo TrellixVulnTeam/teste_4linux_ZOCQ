@@ -1,0 +1,39 @@
+<div *ngIf="error">{{error}}</div>
+<div *ngIf="success">{{success}}</div>
+    
+<mat-form-field>
+  <mat-label>Filtro</mat-label>
+  <input matInput placeHolder="Ex. A101" (keyup)="applyFilter($event)">
+</mat-form-field>
+
+<div id="theTable" class="table-container">
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="agendar">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let row" (click)="book(row)"><button mat-button>Agendar</button></td>
+    </ng-container>
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+      <td mat-cell *matCellDef="let row">{{ row.nome }}</td>
+    </ng-container>
+    <ng-container matColumnDef="horario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Horario</th>
+      <td mat-cell *matCellDef="let row">{{ row.horario }}</td>
+    </ng-container>
+    <ng-container matColumnDef="disp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Disponível</th>
+      <td mat-cell *matCellDef="let row">{{ row.disp }}</td>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns;" [class.disabled]="row.disabled"></mat-row>
+  </mat-table>
+
+
+  <mat-paginator [length]="rooms.length" [pageSize]="10" [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+</div>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form.form.value.name)" novalidate>
+  Criar Sala:
+  <input ngModel name="name" placeHolder="Ex. A101">
+  <button type="submit" class="btn btn-primary" >Enviar</button>
+</form>

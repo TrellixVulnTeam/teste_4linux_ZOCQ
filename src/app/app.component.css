@@ -1,0 +1,9 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.table-container {
+    width: 100%;
+}
+
+mat-table {
+    width: 100%;
+}
